@@ -35,3 +35,22 @@ exit
 ```bash
 podman compose down
 ````
+
+## Prepare first run
+
+There is a file named '.env'. Here, you need to place the directory projects in the variable 'PROJECTS_DIR'. This is the directory where the projects will be stored.
+
+```bash
+PROJECTS_DIR=/path/to/your/projects
+````
+
+## Create a directory named scripts within the projects directory
+
+```bash
+mkdir -p $PROJECTS_DIR/scripts
+````
+
+## Move the e3sm sample script to the scripts directory and then run it
+
+```bash
+
