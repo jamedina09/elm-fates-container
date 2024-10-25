@@ -146,7 +146,7 @@ Once there, type `ls`, and you’ll see all the files and directories in your `p
 
 ## Running the sample script
 
-The sample script is named ``e3sm_fates_test.sh`. The extension `.sh` indicates that this is a shell script, which is used to automate tasks in the terminal. The script e3sm_fates_test.sh serves as a sample to run the first test, meaning that all the instructions needed to run the model are defined here. Open it and check what’s inside. You can modify this script to run your own simulations.
+The sample script is named `e3sm_fates_test.sh`. The extension `.sh` indicates that this is a shell script, which is used to automate tasks in the terminal. The script e3sm_fates_test.sh serves as a sample to run the first test, meaning that all the instructions needed to run the model are defined here. Open it and check what’s inside. You can modify this script to run your own simulations.
 
 Go to the `scripts` directory:
 
