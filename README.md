@@ -39,10 +39,23 @@ projects
 └── elm-fates-container
     ├── docker-compose.yml
     ├── run.md
+    ├── .env
     └── scripts
         └── e3sm_sample.sh
 ````
 
+The file `docker-compose.yml` is the file that will be used to run the container. The file `.env` is a file that contains the path to the projects directory. The directory `scripts` contains the script `e3sm_sample.sh`, which is a sample script to run the first test.
+
+
+The file '.env' is a hidden file, so you need to use the command `ls -a` in your terminal to see it.
+
+We need to edit the `.env` file. Open it with your preferred text editor (VS Code, Emacs, Vim, or any simple text editor available on your computer), and replace the path `/Users/MedinaJA/projects`—which is the path on my machine—with the path to your own `projects` directory.
+
+This is how you open it from your terminal using the default text editor:
+
+```bash
+open ~/projects/elm-fates-container/.env
+````
 
 
 ## Downloading the container
