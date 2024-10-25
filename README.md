@@ -6,8 +6,6 @@ I personally use [Podman](https://podman-desktop.io/downloads) to manage contain
 
 You will need to install Podman Desktop (or Docker Desktop) on your machine. When installing Podman Desktop (or Docker Desktop) on your machine, follow all the instructions on their respective websites (linked above). You may need to install additional dependencies, but these will be indicated by the installer, so just follow the prompts and install them.
 
-After installing Podman Desktop (or Docker Desktop), you can follow the instructions below to download the container and run it.
-
 ## Command line Interface (CLI)
 
 To run FATES, you will need to use the command line interface (CLI). The CLI is a text-based interface that allows you to interact with the computer using commands. The CLI is also known as the terminal on Macs or command prompt on Windows.
@@ -148,6 +146,8 @@ Once there, type `ls`, and you’ll see all the files and directories in your `p
 
 ## Running the sample script
 
+The sample script is named ``e3sm_fates_test.sh`. The extension `.sh` indicates that this is a shell script, which is used to automate tasks in the terminal. The script e3sm_fates_test.sh serves as a sample to run the first test, meaning that all the instructions needed to run the model are defined here. Open it and check what’s inside. You can modify this script to run your own simulations.
+
 Go to the `scripts` directory:
 
 ```bash
@@ -172,11 +172,11 @@ Now, run the script again:
 ./e3sm_fates_test.sh
 ````
 
-The script will initiate the first test, which involves a FATES run over a single-point test site in Brazil. After executing the .sh file, you'll notice that the container creates several folders. One of these folders is `inputdata`, which contains the necessary input data for the test. The other folder is `scratch`, where the build process, runtime data, and output will be stored. The inputdata will be downloaded automatically when you run the script. This will be the default data for the test. Or, if you want to run simulations using your own site data, you'll need to prepare your own forcing data and specify where you located it."
+The script will initiate the first test, which involves a FATES run over a single-point test site in Brazil. After executing the .sh file, you'll notice that the container creates several folders. One of these folders is `inputdata`, which contains the necessary input data for the test. The other folder is `scratch`, where the build process, runtime data, and output will be stored. The inputdata will be downloaded automatically when you run the script. This will be the default data for the test. Or, if you want to run simulations using your own site data, you'll need to prepare your own forcing data and specify where you located it.
 
 If you run this without encountering any errors, congratulations! You have successfully executed FATES in a container.
 
-Once the process is complete, you can check the output. Navigate to the projects folder on your computer (not inside the container; while that is an option, we’ll skip this for now to quickly review the output). From the `projects` directory, go to `scratch`, then to `E3SM_FATES_TEST`, followed by `archive`, then `lnd`, and finally `hist`. At the top, you should find a file named `Aggregated_E3SM_FATES_TEST_Output.nc`. This file contains the output of the test.
+Once the process is complete, you can check the output. Navigate to the projects folder on your computer (not inside the container; while that is an option, we’ll skip this for now to quickly review the output). From the `projects` directory, go to `scratch`, then to `E3SM_FATES_TEST`, followed by `archive`, then `lnd`, and finally `hist`. At the top, you should find a file named `Aggregated_E3SM_FATES_TEST_Output.nc`—this is not a default name, you can change it. This file contains the output of the test.
 
 This is the path on my machine:
 
