@@ -6,13 +6,6 @@
 # ------------------------------------------------------------------
 
 # ------------------------------------------------------------------
-# Cleanup previous test directories if they exist
-# Remove old scratch and archive directories to start fresh
-# ------------------------------------------------------------------
-rm -rf /projects_mirror/scratch/E3SM_FATES_TEST
-rm -rf /projects_mirror/archive/E3SM_FATES_TEST
-
-# ------------------------------------------------------------------
 # Define base directories and case parameters
 # ------------------------------------------------------------------
 
@@ -30,8 +23,7 @@ CASE="E3SM_FATES_TEST"
 CASE_DIR="$SCRATCH_DIR/$CASE"
 
 # Archive directory for storing model output
-ARCHIVE_DIR="$PROJECTS_DIR/archive/$CASE"
-# ARCHIVE_DIR="/output/archive/$CASE"
+ARCHIVE_DIR="$CASE_DIR/archive"
 
 # Input data directories
 CESM_INPUT_DIR="$PROJECTS_DIR/inputdata"
@@ -134,22 +126,13 @@ done
 # Define the archive directory for model output history files
 ARCHIVE_HIST_DIR="$ARCHIVE_DIR/lnd/hist"
 
-# Check if the history directory exists
-if [[ ! -d "$ARCHIVE_HIST_DIR" ]]; then
-    echo "Error: Archive history directory not found at $ARCHIVE_HIST_DIR"
-    exit 1
-fi
-
 # Change to the archive history directory
-cd "$ARCHIVE_HIST_DIR" || {
-    echo "Error: Could not change to archive history directory. Exiting."
-    exit 1
-}
+cd "$ARCHIVE_HIST_DIR" 
 
 # ------------------------------------------------------------------
 # Concatenate NetCDF history output files into a single file
 # ------------------------------------------------------------------
-ncrcat *.h0.*.nc "Aggregated_${CASE_NAME}_Output.nc"
+ncrcat *.h0.*.nc "Aggregated_${CASE}_Output.nc"
 
 # ------------------------------------------------------------------
 # End of script
