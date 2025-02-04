@@ -1,9 +1,15 @@
-# https://bb.cgd.ucar.edu/cesm/threads/port-machine-to-ubuntu-error.7934/
 #!/bin/bash
 
 # ------------------------------------------------------------------
 # Shell script to set up and run a E3SM_FATES_TEST case
 # ------------------------------------------------------------------
+
+# ------------------------------------------------------------------
+# Cleanup previous test directories if they exist
+# Remove old scratch and archive directories to start fresh
+# ------------------------------------------------------------------
+rm -rf /projects_mirror/scratch/E3SM_FATES_TEST
+rm -rf /projects_mirror/archive/E3SM_FATES_TEST
 
 # ------------------------------------------------------------------
 # Define base directories and case parameters
@@ -23,11 +29,11 @@ CASE="E3SM_FATES_TEST"
 CASE_DIR="$SCRATCH_DIR/$CASE"
 
 # Archive directory for storing model output
-ARCHIVE_DIR="$CASE_DIR/archive"
+ARCHIVE_DIR="$PROJECTS_DIR/archive/$CASE"
 
 # Input data directories
-CESM_INPUT_DIR="$PROJECTS_DIR/inputdata"
-CLMFORC_DIR="$CESM_INPUT_DIR/atm/datm7" # CLM forcing data directory (adjust path if necessary)
+E3SM_INPUT_DIR="$PROJECTS_DIR/inputdata"
+ELMFORC_DIR="$E3SM_INPUT_DIR/atm/datm7" # ELM forcing data directory (adjust path if necessary)
 
 # ------------------------------------------------------------------
 # Navigate to the CIME scripts directory
@@ -38,7 +44,7 @@ cd "$CIME_DIR"
 # Set up model and component parameters for the simulation
 # ------------------------------------------------------------------
 
-# Model type: using CESM model
+# Model type: using E3SM model
 CIME_MODEL="e3sm"
 
 # Compset defines model components: FATES + land, ocean, and ice models
@@ -75,9 +81,9 @@ xmlchanges=(
     "STOP_OPTION=nyears"                # Stop the simulation after 1 year
     "DATM_CLMNCEP_YR_START=1996"        # Start year of the atmospheric forcing data
     "DATM_CLMNCEP_YR_END=1997"          # End year of the atmospheric forcing data
-    "ELM_FORCE_COLDSTART=on"            # Force cold start for CLM model
-    "DIN_LOC_ROOT=$CESM_INPUT_DIR"      # Set the root directory for input data
-    "DIN_LOC_ROOT_CLMFORC=$CLMFORC_DIR" # Set the directory for CLM forcing data
+    "ELM_FORCE_COLDSTART=on"            # Force cold start for ELM model
+    "DIN_LOC_ROOT=$E3SM_INPUT_DIR"      # Set the root directory for input data
+    "DIN_LOC_ROOT_CLMFORC=$ELMFORC_DIR" # Set the directory for ELM forcing data
     "EXEROOT=$CASE_DIR/bld"             # Directory for compiled executable
     "RUNDIR=$CASE_DIR/run"              # Directory for runtime outputs
     "DOUT_S_ROOT=$ARCHIVE_DIR"          # Directory for storing archived outputs

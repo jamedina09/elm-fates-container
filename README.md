@@ -176,12 +176,12 @@ The script will initiate the first test, which involves a FATES run over a singl
 
 If you run this without encountering any errors, congratulations! You have successfully executed FATES in a container.
 
-Once the process is complete, you can check the output. Navigate to the projects folder on your computer (not inside the container; while that is an option, we’ll skip this for now to quickly review the output). From the `projects` directory, go to `scratch`, then to `E3SM_FATES_TEST`, followed by `archive`, then `lnd`, and finally `hist`. At the top, you should find a file named `Aggregated_E3SM_FATES_TEST_Output.nc`—this is not a default name, you can change it. This file contains the output of the test.
+Once the process is complete, you can check the output. Navigate to the projects folder on your computer (not inside the container; while that is an option, we’ll skip this for now to quickly review the output). From the `projects` directory, go to `archive`, then to `E3SM_FATES_TEST`, followed by `lnd`, and finally `hist`. At the top, you should find a file named `Aggregated_E3SM_FATES_TEST_Output.nc`—this is not a default name, you can change it. This file contains the output of the test.
 
 This is the path on my machine:
 
 ```bash
-/Users/XXX/projects/scratch/E3SM_FATES_TEST/archive/lnd/hist/Aggregated_E3SM_FATES_TEST_Output.nc
+/Users/XXX/projects/archive/E3SM_FATES_TEST/lnd/hist/Aggregated_E3SM_FATES_TEST_Output.nc
 ````
 
 The `.nc` extension indicates that this is a NetCDF file. You can open it with any software that supports NetCDF files, such as Panoply, NCO, or CDO. Alternatively, you can use Python or R. If you are new to these tools, I recommend starting with Panoply, as it is user-friendly.
