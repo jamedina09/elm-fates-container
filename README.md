@@ -1,6 +1,6 @@
 ### Disclaimer: This is a personal project and is not supported by the Fates team.
 
-This repository contains the files needed to run FATES in a container. The container is based on the image `ghcr.io/jamedina09/personal-elm-fates-image:latest`, which I created using inspiration from [Repo 1](https://github.com/serbinsh/elm_containers) and [Repo 2](https://github.com/NGEET/fates-tutorial).
+This repository contains the files needed to run FATES in a container, using [E3SM](https://github.com/E3SM-Project/E3SM) as host model (Energy Exascale Earth System Model). The container is based on the image `ghcr.io/jamedina09/personal-elm-fates-image:latest`, which I created using inspiration from [Repo 1](https://github.com/serbinsh/elm_containers) and [Repo 2](https://github.com/NGEET/fates-tutorial).
 
 I personally use [Podman](https://podman-desktop.io/downloads) to manage containers, but you can use [Docker](https://www.docker.com/products/docker-desktop/) if you prefer. The instructions below are for Podman, hence the word "podman" at the beginning of each command. If you use Docker, simply replace "podman" with "docker." I suggest you use Podman, as it is suggested to be more secure and does not require root access.
 
