@@ -104,7 +104,7 @@ projects
 
 ## Downloading the container image
 
-The following command will download the container image from the GitHub Container Registry (ghcr.io). This command only needs to be run once, and you can execute it from any directory. However, I recommend running it from the projects directory, just to ensure you are always in the same location.
+The following command will download the container image from the GitHub Container Registry (ghcr.io). This command only needs to be run once, and you can execute it from any directory. Since you have an open terminal and the directory is likely 'project,' do it there.
 
 ```bash
 podman pull ghcr.io/jamedina09/personal-elm-fates-image:latest
